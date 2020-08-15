@@ -7,7 +7,4 @@ si.cpuTemperature()
     .then(data => console.log(data))
     .catch(error => console.error(error));
 
-//Mem
-si.mem()
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+//HI VAS
