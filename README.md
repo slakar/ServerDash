@@ -1,2 +1,2 @@
 # ServerDash
-Dashboard for server monitoring.
+Open Source Dashboard for server monitoring.
