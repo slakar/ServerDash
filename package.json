@@ -1,0 +1,23 @@
+{
+  "name": "serverdash",
+  "version": "1.0.0",
+  "description": "Server Dashboard",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slakar/ServerDash.git"
+  },
+  "author": "Sachin Aasif Vasu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slakar/ServerDash/issues"
+  },
+  "homepage": "https://github.com/slakar/ServerDash#readme",
+  "dependencies": {
+    "systeminformation": "^4.26.10"
+  }
+}
