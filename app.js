@@ -4,6 +4,7 @@ const test_cpu = si.cpu();
 
 const getServerData = async() => {
 
+  //Promise seems to be an array - Push to array firstly?
   const jsonData = await Promise.all([
     test_cpu,
     si.mem(),
