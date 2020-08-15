@@ -1,11 +1,24 @@
 const si = require('systeminformation');
 
-// promises style - new since version 3
-si.currentLoad().then(data => console.log(data));
+const test_cpu = si.cpu();
 
-si.cpuTemperature()
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+const getServerData = async() => {
 
-//HI VAS
-//Hi Aasif
+  const jsonData = await Promise.all([
+    test_cpu,
+    si.mem(),
+    si.currentLoad()
+  ]);
+
+  return jsonData;
+}
+
+getServerData().then((data) => {
+  var _cpu = data[0];
+  var _mem = data[1];
+  var _load = data[2];
+
+  let jsonObj = {_cpu, _mem, _load};
+
+  console.log(jsonObj);
+});
