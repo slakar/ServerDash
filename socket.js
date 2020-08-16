@@ -1,7 +1,21 @@
 const io = require('socket.io')();
 const si = require('systeminformation');
 
-io.on('connection', onSocketConnection);
+io.on('connection', (socket) => {
+
+  //Receive connection details from user
+  socket.on('User', (payload) => {
+    if(payload.page == "Landing-Page"){
+      socket.emit('redirect', {
+        location: 'overview'
+      });
+    }
+  });
+
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
 
 io.listen(3005);
 

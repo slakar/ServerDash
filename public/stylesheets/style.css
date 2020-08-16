@@ -4,6 +4,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
 a {
   color: #00B7FF;
 }
@@ -22,7 +26,7 @@ a {
 }
 
 #side-nav-header {
-  background-color: #525252;
+  background-color: #444444;
   height: 65px;
 }
 
@@ -35,8 +39,8 @@ a {
   list-style-type: none;
   padding: 15px;
   color: white;
-  background-color: #bf2424;
   cursor: pointer;
+  background-color: #3c3c3c;
 }
 
 #top-bar {
@@ -60,3 +64,43 @@ a {
 .main-dash-container {
   padding: 20px;
 }
+
+/** Loading Wheel */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  padding-top: 10%;
+  margin: auto;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #000;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #000 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/**/
