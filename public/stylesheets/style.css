@@ -1,8 +1,62 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.dash-header {
+  margin: 0;
+  font: 21px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+#side-nav {
+  position: fixed;
+  width: 220px;
+  background-color: #3c3c3c;
+  height: 100%;
+}
+
+#side-nav-header {
+  background-color: #525252;
+  height: 65px;
+}
+
+#side-nav-main ul {
+  padding: 0;
+  margin: 0;
+}
+
+#side-nav-main ul li {
+  list-style-type: none;
+  padding: 15px;
+  color: white;
+  background-color: #bf2424;
+  cursor: pointer;
+}
+
+#top-bar {
+  position: fixed;
+  margin-left: 220px;
+  border-bottom: 1px;
+  width: 100%;
+  height: 65px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.top-bar-container {
+  padding: 20px;
+}
+
+#main-dash {
+  margin-left: 220px;
+  padding-top: 65px;
+}
+
+.main-dash-container {
+  padding: 20px;
 }

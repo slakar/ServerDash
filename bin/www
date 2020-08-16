@@ -2,6 +2,7 @@
 
 /** Module dependencies. */
 var app = require('../app');
+var socket = require('../socket');
 var debug = require('debug')('serverdash:server');
 var http = require('http');
 

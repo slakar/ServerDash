@@ -7,9 +7,6 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-/** Include Socket JS file - Back-end */
-var socket = require('./socket');
-
 var app = express();
 
 // view engine setup
