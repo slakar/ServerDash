@@ -11,8 +11,10 @@ function setNavColour(){
 
 /** Prepare graphs and the rest of the dashboard environment */
 function prepareEnv(_payload){
+
   //Possibly look into validating data - making sure it isnt corrupt
   //Add a timer, display loading for a 3 seconds or so
+  //Look into using async await here
   _section = "section-" + _payload.sec;
   console.log(_payload);
 
@@ -21,12 +23,14 @@ function prepareEnv(_payload){
     title: "Average Load",
     chartID: "avg_load-chart",
     values: [_payload.server_data._load.avgload, 100 - _payload.server_data._load.avgload],
+    labels: ["Active", "Idle"]
   };
 
   mem_load_data = {
     title: "Memory Usage",
     chartID: "mem_usage-chart",
-    values: [_payload.server_data._mem.active, _payload.server_data._mem.free],
+    values: [_payload.server_data._mem.active/1000000000, _payload.server_data._mem.free/1000000000],
+    labels: ["Used", "Free"]
   };
 
   initChart_load(cpu_load_data);
