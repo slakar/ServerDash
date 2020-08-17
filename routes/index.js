@@ -3,12 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Landing-Page' });
-});
-
-/* GET Overview page. */
-router.get('/overview', function(req, res, next) {
-  res.render('overview', { title: 'Overview' });
+  res.render('index', { title: 'Overview' });
 });
 
 /* GET Settings page. */

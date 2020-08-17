@@ -12,7 +12,7 @@ socket.on('connect', function(msg){
 
 //Receiving server data from back-end
 socket.on('server_data', function(msg){
-  console.log(msg);
+  prepareEnv(msg);
 });
 
 //Redirect user to overview page

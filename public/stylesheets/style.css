@@ -65,6 +65,28 @@ a {
   padding: 20px;
 }
 
+/** MAIN SECTIONS */
+#section-overview {
+  display: none;
+}
+
+/** END OF MAIN SECTIONS */
+
+.chart-rows {
+  display: grid;
+  /*grid-template-columns: repeat(1, minmax(0, 1fr)); -- For a small screen, use with media queries*/
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 15px;
+}
+
+.chart-container {
+  height: 200px;
+  max-width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px 3px #e2e2e2;
+  padding: 30px;
+}
+
 /** Loading Wheel */
 .lds-ring {
   display: inline-block;

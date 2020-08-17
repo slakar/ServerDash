@@ -2,15 +2,20 @@ const io = require('socket.io')();
 const si = require('systeminformation');
 
 io.on('connection', (socket) => {
+  console.log("User connected.");
 
-  //Receive connection details from user
-  socket.on('User', (payload) => {
-    if(payload.page == "Landing-Page"){
-      socket.emit('redirect', {
-        location: 'overview'
-      });
-    }
+  socket.on('Data_Request', (payload) => {
+    console.log("User requested: " + payload.req);
+
+  // This will emit the event to all connected sockets
+  getServerData()
+  .then((data) => {
+    io.emit('server_data', {
+      server_data: data,
+      sec: payload.sec
+    });
   });
+})
 
   socket.on('disconnect', () => {
     console.log('user disconnected');
@@ -18,19 +23,6 @@ io.on('connection', (socket) => {
 });
 
 io.listen(3005);
-
-/** Event listener for Socket server "Connection" event. */
-function onSocketConnection(socket) {
-  console.log("Connection from Client.");
-
-  // This will emit the event to all connected sockets
-  getServerData()
-    .then((data) => {
-      io.emit('server_data', {
-        server_data: data
-      });
-    });
-}
 
 /** Data points */
 const test_cpu = si.cpu();
