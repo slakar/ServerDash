@@ -16,10 +16,21 @@ function prepareEnv(_payload){
   _section = "section-" + _payload.sec;
   console.log(_payload);
 
-  //Load data
-  _load_data = [_payload.server_data._load.avgload, 100 - _payload.server_data._load.avgload];
+  //Load data - CPU
+  cpu_load_data = {
+    title: "Average Load",
+    chartID: "avg_load-chart",
+    values: [_payload.server_data._load.avgload, 100 - _payload.server_data._load.avgload],
+  };
 
-  initChart_load(_load_data);
+  mem_load_data = {
+    title: "Memory Usage",
+    chartID: "mem_usage-chart",
+    values: [_payload.server_data._mem.active, _payload.server_data._mem.free],
+  };
+
+  initChart_load(cpu_load_data);
+  initChart_load(mem_load_data);
 
   document.getElementById(_section).style.display = "block";
   document.getElementById('section-loading').style.display = "none";

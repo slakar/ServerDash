@@ -1,20 +1,21 @@
 
 function initChart_load(_data){
   // And for a doughnut chart
-  new Chart(document.getElementById("avg_load-chart"), {
+  new Chart(document.getElementById(_data.chartID), {
       type: 'doughnut',
       data: {
         labels: ["active", "idle"],
         datasets: [
           {
             backgroundColor: ["#bf2424", "#868686"],
-            data: _data
+            data: _data.values
           }
         ]
       },
       options: {
         title: {
-          display: false
+          display: true,
+          text: _data.title
         },
         legend: {
             display: false,
