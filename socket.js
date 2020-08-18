@@ -1,5 +1,5 @@
 const io = require('socket.io')();
-const si = require('systeminformation');
+const sysinfo = require('./sysinfo');
 
 io.on('connection', (socket) => {
   console.log("User connected.");
@@ -7,14 +7,17 @@ io.on('connection', (socket) => {
   socket.on('Data_Request', (payload) => {
     console.log("User requested: " + payload.req);
 
-  // This will emit the event to all connected sockets
-  getServerData()
-  .then((data) => {
-    io.emit('server_data', {
-      server_data: data,
-      sec: payload.sec
-    });
-  });
+    // This will emit the event to all connected sockets
+    sysinfo.getData(["cpu", "mem", "load"])
+      .then((data) => {
+        io.emit('server_data', {
+          server_data: data,
+          sec: payload.sec
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 })
 
   socket.on('disconnect', () => {
@@ -24,33 +27,12 @@ io.on('connection', (socket) => {
 
 io.listen(3005);
 
-/** Data points */
-const test_cpu = si.cpu();
-
-/** Function to retrieve data */
-const getServerData = async() => {
-
-  //Promise seems to be an array - Push to array firstly?
-  const jsonData = await Promise.all([
-    test_cpu,
-    si.mem(),
-    si.currentLoad()
-  ]).then((data) => {
-    var _cpu = data[0];
-    var _mem = data[1];
-    var _load = data[2];
-
-    let jsonObj = {_cpu, _mem, _load};
-
-    //console.log(jsonObj);
-    return jsonObj;
+/*
+sysinfo.getData(["cpu", "mem", "load"])
+  .then((data) => {
+    console.log(data);
   })
   .catch((error) => {
     console.error(error);
-  });
-
-  return jsonData;
-}
-
-/** Collect and format data */
-//getServerData().then((data) => {console.log(data);});
+  })
+*/

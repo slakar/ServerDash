@@ -29,7 +29,7 @@ function prepareEnv(_payload){
   mem_load_data = {
     title: "Memory Usage",
     chartID: "mem_usage-chart",
-    values: [_payload.server_data._mem.active/1000000000, _payload.server_data._mem.free/1000000000],
+    values: [_payload.server_data._mem.active/1000000000, (_payload.server_data._mem.total - _payload.server_data._mem.active)/1000000000],
     labels: ["Used", "Free"]
   };
 
