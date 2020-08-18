@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <section id="side-nav">
+      <div id="side-nav-header">
+
+      </div>
+
+      <div id="side-nav-main">
+        <ul>
+          <a href="/"><li id="nav-Overview">Overview</li></a>
+          <a href="/settings"><li id="nav-Settings" >Settings</li></a>
+        <ul>
+      </div>
+    </section>
+
+    <section id="top-bar">
+      <div class="top-bar-container">
+        <p class="dash-header">{{title}}</p>
+      </div>
+    </section>
+
+    {{{body}}}
+
+    <script>
+      var _page = "{{title}}";
+    </script>
+
+    <script src="/javascripts/socketJS.js"></script>
+    <script src="/javascripts/scripts.js"></script>
+    <script src="/javascripts/init.js"></script>
+    <script src="/javascripts/charts.js"></script>
+  </body>
+</html>
