@@ -42,3 +42,8 @@ function prepareEnv(_payload){
 
 //Keep charts up to Date
 //setInterval(prepareEnv(), 10000);
+
+//Change Page
+function navChange(_nav){
+  window.location.href = "/" + _nav;
+}

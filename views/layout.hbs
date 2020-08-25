@@ -20,14 +20,14 @@
         <table id="nav-table">
           <tbody>
             <!-- Overview button -->
-            <tr id="nav-Overview">
+            <tr id="nav-Overview" onclick="navChange('')">
               <td class="nav-symbol"><a href="/"><span class="material-icons">dashboard</span></a></td>
-              <td><a href="/"><p>Overview</p></a></td>
+              <td><p>Overview</p></td>
             </tr>
             <!-- Settings button -->
-            <tr id="nav-Settings">
-              <td class="nav-symbol"><a href="/settings"><span class="material-icons">settings</span></a></td>
-              <td><a href="/settings"><p>Settings</p></a></td>
+            <tr id="nav-Settings" onclick="navChange('settings')">
+              <td class="nav-symbol"><span class="material-icons">settings</span></td>
+              <td><p>Settings</p></td>
             </tr>
           </tbody>
         </table>
