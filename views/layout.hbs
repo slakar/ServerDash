@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
   </head>
@@ -16,10 +17,20 @@
       </div>
 
       <div id="side-nav-main">
-        <ul>
-          <a href="/"><li id="nav-Overview">Overview</li></a>
-          <a href="/settings"><li id="nav-Settings" >Settings</li></a>
-        <ul>
+        <table id="nav-table">
+          <tbody>
+            <!-- Overview button -->
+            <tr id="nav-Overview">
+              <td class="nav-symbol"><a href="/"><span class="material-icons">dashboard</span></a></td>
+              <td><a href="/"><p>Overview</p></a></td>
+            </tr>
+            <!-- Settings button -->
+            <tr id="nav-Settings">
+              <td class="nav-symbol"><a href="/settings"><span class="material-icons">settings</span></a></td>
+              <td><a href="/settings"><p>Settings</p></a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 

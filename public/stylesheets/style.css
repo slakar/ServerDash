@@ -9,7 +9,7 @@ a:-webkit-any-link {
 }
 
 a {
-  color: #00B7FF;
+
 }
 
 .dash-header {
@@ -30,17 +30,25 @@ a {
   height: 65px;
 }
 
-#side-nav-main ul {
-  padding: 0;
-  margin: 0;
+#side-nav-main table {
+  width: 100%;
+  border-spacing: 0;
 }
 
-#side-nav-main ul li {
+#side-nav-main table tr {
   list-style-type: none;
   padding: 15px;
   color: white;
   cursor: pointer;
   background-color: #3c3c3c;
+}
+
+#side-nav-main table tr td a {
+  color: white;
+}
+
+#side-nav-main table tr .nav-symbol{
+  text-align: center;
 }
 
 #top-bar {

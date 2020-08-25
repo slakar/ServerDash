@@ -39,3 +39,6 @@ function prepareEnv(_payload){
   document.getElementById(_section).style.display = "block";
   document.getElementById('section-loading').style.display = "none";
 }
+
+//Keep charts up to Date
+//setInterval(prepareEnv(), 10000);
