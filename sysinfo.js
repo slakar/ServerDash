@@ -1,4 +1,14 @@
 const si = require('systeminformation');
+const cp = require('child_process');
+
+const exec_options = {
+  cwd: null,
+  env: null,
+  encoding: 'utf8',
+  timeout: 0,
+  maxBuffer: 200 * 1024,
+  killSignal: 'SIGTERM'
+};
 
 const sysComponents = {
   cpu: si.cpu(),
@@ -30,5 +40,12 @@ async function getData(_req){
 
   return jsonData;
 }
+
+/** TEST - Processes */
+cp.exec('pm2 jlist', exec_options, (err, stdout, stderr) => {
+  var jsonObj = JSON.parse(stdout);
+
+  console.log(jsonObj);
+});
 
 exports.getData = getData;
