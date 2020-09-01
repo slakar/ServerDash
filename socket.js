@@ -8,7 +8,7 @@ io.on('connection', (socket) => {
     console.log("User requested: " + payload.req);
 
     // This will emit the event to all connected sockets
-    sysinfo.getData(["cpu", "mem", "load"])
+    sysinfo.getData(["cpu", "mem", "load","disk"])
       .then((data) => {
         io.emit('server_data', {
           server_data: data,

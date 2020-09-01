@@ -33,8 +33,16 @@ function prepareEnv(_payload){
     labels: ["Used", "Free"]
   };
 
+  disk_usage_data = {
+    title: "Disk Usage",
+    chartID: "disk_usage-chart",
+    values: [_payload.server_data._disk[0].use, (100 - _payload.server_data._disk[0].use)],
+    labels: ["Used", "Free"]
+  };
+
   initChart_load(cpu_load_data);
   initChart_load(mem_load_data);
+  initChart_load(disk_usage_data);
 
   document.getElementById(_section).style.display = "block";
   document.getElementById('section-loading').style.display = "none";
