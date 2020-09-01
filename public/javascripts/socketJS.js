@@ -1,5 +1,5 @@
 //Establish socket Connection
-var socket = io.connect('http://192.168.0.41:3005');
+var socket = io.connect('http://localhost:3005');
 
 //Emit message on initial connection
 socket.on('connect', function(msg){

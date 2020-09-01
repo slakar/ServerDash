@@ -3,7 +3,8 @@ const si = require('systeminformation');
 const sysComponents = {
   cpu: si.cpu(),
   mem: si.mem(),
-  load: si.currentLoad()
+  load: si.currentLoad(),
+  disk: si.fsSize()
 };
 
 /** Function to retrieve data */
@@ -30,5 +31,8 @@ async function getData(_req){
 
   return jsonData;
 }
+
+
+//getData(["disk"]).then(data => console.log(data));
 
 exports.getData = getData;
