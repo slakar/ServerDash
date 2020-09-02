@@ -13,7 +13,8 @@ const exec_options = {
 const sysComponents = {
   cpu: si.cpu(),
   mem: si.mem(),
-  load: si.currentLoad()
+  load: si.currentLoad(),
+  disk: si.fsSize()
 };
 
 /** Function to retrieve data */
